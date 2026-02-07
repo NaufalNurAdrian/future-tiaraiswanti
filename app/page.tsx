@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from 'react';
 import Image from "next/image";
@@ -48,8 +48,8 @@ export default function Home() {
   }, []);
 
   const parallaxY = scrollY * 0.5;
-  const mouseParallaxX = (mousePos.x - window.innerWidth / 2) * 0.02;
-  const mouseParallaxY = (mousePos.y - window.innerHeight / 2) * 0.02;
+  const mouseParallaxX = typeof window !== 'undefined' ? (mousePos.x - window.innerWidth / 2) * 0.02 : 0;
+  const mouseParallaxY = typeof window !== 'undefined' ? (mousePos.y - window.innerHeight / 2) * 0.02 : 0;
 
   return (
     <main className="w-full scroll-smooth overflow-hidden">
